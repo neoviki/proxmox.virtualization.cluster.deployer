@@ -1,101 +1,162 @@
 # Proxmox Automation Utilities
 
-This project contains a set of scripts (or utilities) to simplify and automate administrative tasks on a Proxmox server. Proxmox is an open-source virtualization platform used to manage virtual machines (VMs) and containers, providing a comprehensive and efficient solution for deploying, managing, and backing up virtualized environments.
+**Repository Name:** `proxmox.virtualization.cluster.deployer`
 
-These wrapper scripts offer an interface for performing common Proxmox server operations like creating, deleting, exporting, importing, and restarting VMs, as well as enabling or disabling the Proxmox web-based GUI and setting up serial console access.
+This project provides a set of scripts (utilities) to simplify and automate administrative tasks on a Proxmox server. Proxmox is an open-source virtualization platform for managing virtual machines (VMs) and containers, offering solution for deploying, managing, and backing up virtualized environments.
+
+These scripts provide an easy to use interface for common Proxmox operations such as creating, deleting, exporting, importing, and restarting VMs. They also allow you to enable or disable the Proxmox web-based GUI and configure serial console access.
+
+---
 
 ## What is Proxmox?
 
-Proxmox is a powerful open-source virtualization platform that enables the management of virtual machines and containers. It offers support for both KVM (for full virtualization) and LXC (for lightweight container-based virtualization). Proxmox is highly popular for managing virtualized infrastructure in both enterprise and personal environments. It comes with a built-in web interface for managing VMs, containers, storage, and networks.
+Proxmox VE (Virtual Environment) is an open-source virtualization platform that supports:
+
+* **KVM:** Full virtualization for VMs
+* **LXC:** Lightweight container-based virtualization
+
+Proxmox allows centralized management of virtualized infrastructure, with features including:
+
+* Built-in web interface for managing VMs, containers, storage, and networks
+* High availability and live migration support
+* Flexible resource allocation for CPU, memory, and storage
+
+Proxmox is widely used in both enterprise and personal environments for building scalable virtualized infrastructures.
+
+---
 
 ## Utilities
 
 ### 1. `delete.vm`
-This script deletes a specified virtual machine (VM) from the Proxmox server.
+
+Deletes a specified virtual machine (VM) from the Proxmox server.
 
 **Usage:**
+
 ```bash
 $ ./delete.vm <vm_id>
 ```
-- `<vm_id>`: The ID of the VM you wIsh to delete.
+
+* `<vm_id>`: The ID of the VM you wish to delete.
+
+---
 
 ### 2. `export.vm`
-This script exports a VM to a specified file format, allowing you to back it up or transfer it.
+
+Exports a VM to a specified file format for backup or transfer.
 
 **Usage:**
+
 ```bash
 $ ./export.vm <vm_id> <export_path>
 ```
-- `<vm_id>`: The ID of the VM you wish to export.
-- `<export_path>`: The path where the exported VM will be saved.
+
+* `<vm_id>`: The ID of the VM to export
+* `<export_path>`: Destination path for the exported VM
+
+---
 
 ### 3. `gui.disable`
-This script disables the Proxmox web-based GUI, preventing users from accessing it through a browser.
+
+Disables the Proxmox web-based GUI.
 
 **Usage:**
+
 ```bash
 $ ./gui.disable
 ```
 
+---
+
 ### 4. `gui.enable`
-This script enables the Proxmox web-based GUI, allowing users to access it through a browser.
+
+Enables the Proxmox web-based GUI.
 
 **Usage:**
+
 ```bash
 $ ./gui.enable
 ```
 
+---
+
 ### 5. `import.vm`
-This script imports a previously exported VM back into the Proxmox server.
+
+Imports a previously exported VM into the Proxmox server.
 
 **Usage:**
+
 ```bash
 $ ./import.vm <import_path>
 ```
-- `<import_path>`: The path to the VM export file that you want to import.
+
+* `<import_path>`: Path to the VM export file
+
+---
 
 ### 6. `restart.hard`
-This script performs a hard restart of the Proxmox server, forcing a reboot of all services.
+
+Performs a hard restart of the Proxmox server, rebooting all services.
 
 **Usage:**
+
 ```bash
 $ ./restart.hard
 ```
 
+---
+
 ### 7. `restart`
-This script restarts a specific VM on the Proxmox server.
+
+Restarts a specific VM on the Proxmox server.
 
 **Usage:**
+
 ```bash
 $ ./restart <vm_id>
 ```
-- `<vm_id>`: The ID of the VM you want to restart.
+
+* `<vm_id>`: The ID of the VM to restart
+
+---
 
 ### 8. `serial.connect`
-This script establishes a serial connection to a specified VM, allowing you to interact with the VM’s console.
+
+Establishes a serial connection to a specified VM for console access.
 
 **Usage:**
+
 ```bash
 $ ./serial.connect <vm_id>
 ```
-- `<vm_id>`: The ID of the VM to connect to.
+
+* `<vm_id>`: The ID of the VM to connect to
+
+---
 
 ### 9. `serial.enable`
-This script enables serial console access for a specified VM on the Proxmox server.
+
+Enables serial console access for a specified VM.
 
 **Usage:**
+
 ```bash
 $ ./serial.enable <vm_id>
 ```
-- `<vm_id>`: The ID of the VM for which to enable serial console access.
+
+* `<vm_id>`: The ID of the VM to enable console access for
+
+---
 
 ## Prerequisites
 
-- Proxmox server setup and running.
-- Appropriate permissions to interact with Proxmox services.
-- The necessary VM IDs or paths for the operations to function.
+* A running Proxmox server
+* Appropriate permissions to interact with Proxmox services
+* The VM IDs or paths required for specific operations
 
+---
 
-## Reference
+## References
 
-[1] https://www.proxmox.com/en/
+[Proxmox Official Website](https://www.proxmox.com/en/)
+
